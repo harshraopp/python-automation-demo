@@ -1,9 +1,29 @@
-    - name: Install Ansible
-      run: |
-        sudo apt update
-        sudo apt install -y ansible
+name: Python Automation CI
 
-    - name: Run Ansible playbook
-      run: |
-        ansible-playbook -i ansible/inventory ansible/playbook.yml
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  run-automation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Ansible
+        run: |
+          sudo apt update
+          sudo apt install -y ansible
+
+      - name: Run Ansible playbook
+        run: |
+          ansible-playbook -i ansible/inventory ansible/playbook.yml
 
