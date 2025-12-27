@@ -2,7 +2,8 @@ import os
 from datetime import datetime
 folderpath = "pythontest"
 newpath = "pythontest2"
-name = str(input("enter your name"))
+name = os.getenv("USER_NAME", "AutomationUser")
+print(f"Hello {name}")
 timenow = datetime.now()
 print(f"time is {timenow}")
 print("saving to a file name.txt")
