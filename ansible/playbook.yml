@@ -4,5 +4,5 @@
 
   tasks:
     - name: Run python script
-      command: python script.py
+      command: python3 ../new.py
 
