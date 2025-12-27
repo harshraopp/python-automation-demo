@@ -13,7 +13,6 @@ if not os.path.exists(folderpath):
     os.mkdir(folderpath)
     if os.path.exists(folderpath):
         os.rename(folderpath, newpath)
-
     else:
         print("unsuccessfull")
 else:
@@ -31,8 +30,8 @@ else:
 # os.rename(oldname, newname)
 # os.mkdir(newfolder)
 #shutil.move(source, destination)
-os.listdir("logs")
-if file.endswith(".txt"):
+# os.listdir("logs")
+# if file.endswith(".txt"):
 
 
     
